@@ -1,0 +1,50 @@
+UCLA
+Computer Science
+MATH-192
+Analytic Geometry and Calculus I
+5
+MATH-193
+Analytic Geometry and Calculus II
+5
+MATH-194
+Linear Alegbra
+3
+MATH-195
+Discrete Math
+4
+MATH-292
+Analytic Geometry and Calculus III
+5
+MATH-294
+Differential Equations
+5
+PHYS-130
+Physics for Engineers and Scientists A: Mechanics and Wave Motion
+4
+PHYS-230
+Physics for Engineers and Scientists B: Heat and Electro-Magnetism
+4
+PHYS-231 
+Physics for Engineers and Scientists C: Optics and Modern Physics
+4
+ENGL-122
+First-Year College Composition and Reading
+3
+ENGL-123
+Critical Thinking: Composition and Literature
+3
+COMSC-110
+Introduction to Programming 
+4
+COMSC-165
+Advanced Programming with C and C++
+4
+COMSC-200
+Object Oriented Programming C++
+4
+COMSC-210
+Program Design and Data Structures
+4
+COMSC-260
+Assembly Language Programming/Computer Organization
+4
