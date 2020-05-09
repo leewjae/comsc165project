@@ -9,16 +9,32 @@ using namespace std;
 #include "module.h"
 
 Module::Module() {
+    /*
+    constructor
+    - Automatically shows the menu. see void show_menu()
+    */
     show_menu();
 }
 
 void Module::press_any_key_to_continue() {
+    /*
+    function
+    - Versatile function.
+    - Use whenever if unexpected error occured or if user want to quit. I used this a lot.
+    - system("read") allow us to enter something. 
+    */
     std::cout << "Please enter any key to continue... (redirects to the main menu)\n";
     std::system("read");
     show_menu();
 }
 
 void Module::show_menu() {
+    /*
+    - show menu function show the menu. If you want to edit the main menu, please try to edit this.
+    - greeting function allow the computer to read the user file if applicable. If not, It'll make
+    user.txt. Code allows the user to enter his or her name/school/major.
+    - see void greeting() for more info
+    */
     greeting();
     string str_answer;
     int answer = 0;
@@ -33,20 +49,33 @@ void Module::show_menu() {
         std::cout << "Thank you for using our program!\n";
         exit(0);
     }  else if (answer == 1) {
-        Module::show_gpa_and_coursework();
+        Module::show_gpa_and_coursework(); // We don't need to use Module::func_name but I just used it lol
     } else if (answer == 2) {
         Module::show_transfer_path();
     } else if (answer == 3) {
         edit_courses();
     } else if (answer == 4) {
         show_remained_courses();
-    } else { // if user inputs false value, the string will be automatically converted to 0.
-        cout << "Please re-select\n" << endl;
+    } else { 
+        // if user inputs false value, the string will be automatically converted to 0(due to atoi()).
+        // if we use stoi, the stoi will throw an error. 
+        cout << "Please re-select from the options\n" << endl;
         show_menu();
     }
 }
 
-void Module::show_transfer_path() { // If you want to add school, just add line.
+void Module::show_transfer_path() { 
+    /* If you want to add school, just add line.
+    - may need to follow format school_name.open("filename.txt")!
+    ex) else if (answer == 3) {
+        school_name.open("harvard_eecs.txt")
+    }
+    - if you add schools, be sure to edit void show_schools(). 
+    - I tried to add them here, but I noticed that showing school's name is used in many 
+    other functions so I separated it. 
+    - When function finishies showing the requirements, it automatically closes the file and
+    call press_any_key_to_continue() <-- 
+    */
     string str_answer;
     int answer;
     show_schools(); // shows schools
@@ -67,6 +96,10 @@ void Module::show_transfer_path() { // If you want to add school, just add line.
 }
 
 void Module::show_gpa_and_coursework() {
+    /*
+    Loads user.txt, calculate user's gpa and show them coursework.
+
+    */
     fstream user;
     user.open("./user.txt");
     string name,school,major;
@@ -81,7 +114,7 @@ void Module::show_gpa_and_coursework() {
     std::cout << "You have completed:" << endl;
     int index = 1;
     if (user.eof()) {
-        cout << "You did not add any courses. Do you want to add now?\n";
+        cout << "You did not add any courses. Do you want to add now? (Please answer with yes or no)\n";
         string choice;
         getline(cin,choice);
         if (choice == "yes") {
@@ -115,7 +148,13 @@ void Module::show_gpa_and_coursework() {
     }
 }
 
-int Module::grade_to_number(string letter_grade) { // returns integer that corresponds to the given string grade
+int Module::grade_to_number(string letter_grade) {
+    // returns integer that corresponds to the given string grade
+    /*
+    I tried to add P/NP, W, EW, and C/NC, but I noticed that will make our program more complicate.
+    If you want to add that, please feel free.
+    I guess that'll be very burdensome because you may need to edit other functions as well.
+    */
     int number = 0;
     if (letter_grade == "A") {
         number = 4;
@@ -132,8 +171,11 @@ int Module::grade_to_number(string letter_grade) { // returns integer that corre
 }
 
 void Module::edit_courses() {
+    /*
+
+    */
     string response = "";
-    std::cout << "Do you want to add? or delete?" << endl;
+    std::cout << "Do you want to add? or delete? (Please answer with add or delete)" << endl;
     getline(cin,response);
     if ( response == "add" ) {
         Module::add_courses();
@@ -146,6 +188,10 @@ void Module::edit_courses() {
 }
 
 void Module::add_courses() {
+    /*
+    - ios:app allows us to write code from the back.
+
+    */
     fstream user;
     user.open("user.txt",ios::app);
     string course_number,course_name,credits,letter_grade,reply;
@@ -178,26 +224,23 @@ void Module::add_courses() {
         }
 
     } else if (reply == "no") {
-        std::cout << "Okay, do you want to re-enter your data? or you want to exit?\n";
-        string E_or_R;
-        getline(cin,E_or_R);
-        if (E_or_R == "Re-enter") {
+        std::cout << "Okay, do you want to re-enter your data? \n";
+        string reply;
+        getline(cin,reply);
+        if (reply == "yes") {
             std::cout << "Okay. please re-enter the information\n";
             add_courses();
         } else  {
             press_any_key_to_continue();
         }
 
+    } else {
+        press_any_key_to_continue();
     }
 
 }
 
 void Module::delete_courses() {
-    show_my_coursework_only();
-    press_any_key_to_continue();
-}
-
-void Module::show_my_coursework_only() {
     fstream user;
     user.open("./user.txt");
     string name,school,major;
@@ -234,7 +277,7 @@ void Module::show_my_coursework_only() {
         // press_any_key_to_continue();
     } else {
         string reply;
-        cout << "You chose " << vec_course_number.at(index_course_to_delete) << "to be deleted. Is this correct?";
+        cout << "You chose " << vec_course_number.at(index_course_to_delete) << " to be deleted. Is this correct?";
         getline(cin,reply);
         cout << reply;
             if (reply == "yes") {
@@ -267,6 +310,7 @@ void Module::show_my_coursework_only() {
                 press_any_key_to_continue();
             }
         }
+        press_any_key_to_continue();
     }
 
 void Module::show_remained_courses() {
