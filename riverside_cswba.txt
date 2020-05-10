@@ -1,0 +1,41 @@
+UC Riverside
+Computer Science with Business Applications
+MATH-192
+Analytic Geometry and Calculus I
+5
+MATH-193
+Analytic Geometry and Calculus II
+5
+MATH-292
+Analytic Geometry and Calculus III
+5
+MATH-194
+Linear Algebra
+3
+BUSAC-186
+Financial Accounting
+4
+COMSC-110
+Introduction to Programming
+4
+COMSC-165
+Advanced Programming with C and C++
+4
+COMSC-200
+Object Oriented Programming
+4
+COMSC-260
+Assembly Language Programming/Computer Organization
+4
+COMSC-210
+Program Design and Data Structures
+4
+BIOSC-102
+Fundamentals of Biological Science with Lab
+4
+ECON-220
+Principles of Macroeconomics
+3
+ECON-221
+Principles of Microeconomics
+3

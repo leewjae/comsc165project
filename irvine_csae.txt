@@ -1,5 +1,5 @@
-UC Los Angeles
-Computer Science
+UC Irvine
+Computer Science and Engineering
 MATH-192
 Analytic Geometry and Calculus I
 5
@@ -24,11 +24,11 @@ Introduction to Programming
 COMSC-165
 Advanced Programming with C and C++
 4
-COMSC-260
-Assembly Language Programming/Computer Organization
+COMSC-200
+Object Oriented Programming
 4
-COMSC-210
-Program Design and Data Structures
+COMSC-255
+Programming with Java
 4
 PHYS-130
 Physics for Engineers and Scientists A: Mechanics and Wave Motion
@@ -36,12 +36,6 @@ Physics for Engineers and Scientists A: Mechanics and Wave Motion
 PHYS-230
 Physics for Engineers and Scientists B: Heat and Electro-Magnetism
 4
-PHYS-231
-Physics for Engineers and Scientists C: Optics and Modern Physics
+ENGIN-230
+Introduction to Circuits and Devices
 4
-ENGL-122
-Freshman English: Composition and Reading
-3
-ENGL-123
-Critical Thinking: Composition and Literature
-3
