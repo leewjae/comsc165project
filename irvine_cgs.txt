@@ -1,0 +1,29 @@
+UC Irvine
+Computer Game Science
+MATH-192
+Analytic Geometry and Calculus I
+5
+MATH-193
+Analytic Geometry and Calculus II
+5
+MATH-194
+Linear Algebra
+3
+MATH-195
+Discrete Mathematics
+4
+COMSC-110
+Introduction to Programming
+4
+COMSC-165
+Advanced Programming with C and C++
+4
+COMSC-255
+Programming with Java
+4
+COMSC-210
+Program Design and Data Structures
+4
+COMSC-200
+Object Oriented Programming
+4

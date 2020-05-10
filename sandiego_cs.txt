@@ -1,4 +1,4 @@
-UC Los Angeles
+UC San Diego
 Computer Science
 MATH-192
 Analytic Geometry and Calculus I
@@ -15,14 +15,17 @@ Linear Algebra
 MATH-195
 Discrete Mathematics
 4
-MATH-294
-Differential Equations
-5
 COMSC-110
 Introduction to Programming
 4
 COMSC-165
 Advanced Programming with C and C++
+4
+COMSC-200
+Object Oriented Programming C++
+4
+COMSC-255
+Programming with Java
 4
 COMSC-260
 Assembly Language Programming/Computer Organization
@@ -36,12 +39,3 @@ Physics for Engineers and Scientists A: Mechanics and Wave Motion
 PHYS-230
 Physics for Engineers and Scientists B: Heat and Electro-Magnetism
 4
-PHYS-231
-Physics for Engineers and Scientists C: Optics and Modern Physics
-4
-ENGL-122
-Freshman English: Composition and Reading
-3
-ENGL-123
-Critical Thinking: Composition and Literature
-3

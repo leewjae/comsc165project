@@ -1,5 +1,5 @@
-UC Los Angeles
-Computer Science
+UC Santa Cruz
+Computer Engineering
 MATH-192
 Analytic Geometry and Calculus I
 5
@@ -39,9 +39,10 @@ Physics for Engineers and Scientists B: Heat and Electro-Magnetism
 PHYS-231
 Physics for Engineers and Scientists C: Optics and Modern Physics
 4
-ENGL-122
-Freshman English: Composition and Reading
+ENGIN-230
+Introduction to Circuits and devices
+4
+PHILO-122
+Introduction to ethics
 3
-ENGL-123
-Critical Thinking: Composition and Literature
-3
+

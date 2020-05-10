@@ -1,4 +1,4 @@
-UC Los Angeles
+UC Davis
 Computer Science
 MATH-192
 Analytic Geometry and Calculus I
@@ -12,17 +12,14 @@ Analytic Geometry and Calculus III
 MATH-194
 Linear Algebra
 3
-MATH-195
-Discrete Mathematics
-4
-MATH-294
-Differential Equations
-5
 COMSC-110
 Introduction to Programming
 4
 COMSC-165
 Advanced Programming with C and C++
+4
+COMSC-200
+Object Oriented Programming C++
 4
 COMSC-260
 Assembly Language Programming/Computer Organization
@@ -33,15 +30,9 @@ Program Design and Data Structures
 PHYS-130
 Physics for Engineers and Scientists A: Mechanics and Wave Motion
 4
-PHYS-230
+PHYS-130
 Physics for Engineers and Scientists B: Heat and Electro-Magnetism
 4
-PHYS-231
-Physics for Engineers and Scientists C: Optics and Modern Physics
+BIOSC-102
+Fundamentals of Biological Science with Laboratory
 4
-ENGL-122
-Freshman English: Composition and Reading
-3
-ENGL-123
-Critical Thinking: Composition and Literature
-3
