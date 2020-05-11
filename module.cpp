@@ -76,29 +76,73 @@ void Module::show_transfer_path() {
     - When function finishies showing the requirements, it automatically closes the file and
     call press_any_key_to_continue() <-- 
     */
-    string str_answer;
-    int answer;
     show_schools(); // shows schools
-    getline(cin,str_answer);
-    answer = stoi(str_answer.c_str());
-    fstream school_name;
-    if (answer == 1) {
-        school_name.open("ucberkeley_eecs.txt");
-    } else if (answer == 2) {
-        school_name.open("ucla_cs.txt");
-    } else {
-        cout << "Please enter from the options." << endl;
-        show_transfer_path();
-    }
+    fstream school_name(open_school_file());
     show_school_info(school_name);
     school_name.close();
     press_any_key_to_continue();
 }
 
+string Module::open_school_file() {
+    /*
+    return the name of the file that you want to open.
+    You may want to use with fstream stream_name(open_school_file());
+    */
+    string str_choice;
+    int choice = 1;
+    getline(cin,str_choice);
+    choice = atoi(str_choice.c_str());
+    if (choice == 0) {
+        cout << "Invalid choice! \n";
+        open_school_file();
+    } else if (choice == 1) {
+        return ("./data/berkeley_cs.txt"); // loading berkeley_cs
+    } else if (choice == 2) {
+        return ("./data/berkeley_eecs.txt"); // loading ucla_cs
+    } else if (choice == 3) {
+        return ("./data/davis_ce.txt");
+    } else if (choice == 4) {
+        return ("./data/davis_cs.txt");
+    } else if (choice == 5) {
+        return ("./data/davis_csae.txt");
+    } else if (choice == 6) {
+        return ("./data/irvine_ce.txt");
+    } else if (choice == 7) {
+        return ("./data/irvine_cgs.txt");
+    } else if (choice == 8) {
+        return ("./data/irvine_cs.txt");
+    } else if (choice == 9) {
+        return ("./data/irvine_csae.txt");
+    } else if (choice == 10) {
+        return ("./data/merced_csae.txt");
+    } else if (choice == 11) {
+        return ("./data/riverside_ce.txt");
+    } else if (choice == 12) {
+        return ("./data/riverside_cs.txt");
+    } else if (choice == 13) {
+        return ("./data/riverside_cswba.txt");
+    } else if (choice == 14) {
+        return ("./data/sandiego_ce.txt");
+    } else if (choice == 15) {
+        return ("./data/sandiego_cs.txt");
+    } else if (choice == 16) {
+        return ("./data/santabarbara_ce.txt");
+    } else if (choice == 17) {
+        return ("./data/santabarbara_cs.txt");
+    } else if (choice == 18) {
+        return ("./data/santacruz_ce.txt");
+    } else if (choice == 19) {
+        return ("./data/santacruz_cs.txt");
+    } else if (choice == 20) {
+        return ("./data/ucla_cs.txt");
+    } else if (choice == 21) {
+        return ("./data/ucla_csae.txt");
+    }  
+}
+
 void Module::show_gpa_and_coursework() {
     /*
     Loads user.txt, calculate user's gpa and show them coursework.
-
     */
     fstream user;
     user.open("./user.txt");
@@ -269,7 +313,7 @@ void Module::delete_courses() {
     }
     string course_to_delete ="";
     int index_course_to_delete = 0;
-    cout << "Which course do you want to delete?\n";
+    cout << "Which course do you want to delete? (Please enter a number)\n";
     getline(cin,course_to_delete);
     index_course_to_delete = atoi(course_to_delete.c_str()) - 1 ;// because index starts from 1 
     if (index_course_to_delete == -1) {
@@ -316,24 +360,10 @@ void Module::delete_courses() {
 void Module::show_remained_courses() {
     vector<vector<string> > schoolinfo(3);
     show_schools();
-    string str_choice;
-    int choice = 1;
-    getline(cin,str_choice);
-    choice = atoi(str_choice.c_str());
-    if (choice == 0) {
-        cout << "Invalid choice! \n";
-        press_any_key_to_continue();
-    } else if (choice == 1) {
-        fstream school_requirement("./ucberkeley_eecs.txt"); // loading berkeley_eecs
-        schoolinfo = school_info_into_vector(school_requirement);
-        school_requirement.close();
-        show_remained_courses_by_schools(schoolinfo);
-    } else if (choice == 2) {
-        fstream school_requirement("./ucla_cs.txt"); // loading ucla_cs
-        schoolinfo = school_info_into_vector(school_requirement);
-        school_requirement.close();
-        show_remained_courses_by_schools(schoolinfo);
-    }
+    fstream school_name(open_school_file());
+    schoolinfo = school_info_into_vector(school_name);
+    school_name.close();
+    show_remained_courses_by_schools(schoolinfo);
 }
 
 void Module::show_remained_courses_by_schools(vector<vector<string> > schoolinfo) {
@@ -355,28 +385,51 @@ void Module::show_remained_courses_by_schools(vector<vector<string> > schoolinfo
                 }
             }
         }
-        cout << "You should complete the following--\n";
-
+        cout << "You should complete those courses to apply the school\n";
+        cout << "-------------------------------------------------------------"  << endl;
         for ( int i = 0 ; i < not_completed_courses.at(0).size() ; ++i ) {
             for ( int j = 0 ; j < not_completed_courses.size(); ++j) {
-                cout << not_completed_courses.at(j).at(i) << endl;
+                if ( j != 2) {
+                    cout << not_completed_courses.at(j).at(i) << "\n";
+                } else {
+                    cout << not_completed_courses.at(j).at(i) << " credits" << endl;
+                }
             }
-            cout << endl;
+            cout << "-------------------------------------------------------------" << endl;
         }
         press_any_key_to_continue();
 }
 
 void Module::show_schools() { // change show school
     cout << "Which school and program?" << endl;
-    cout << "1.UC Berkeley, EECS" << endl;
-    cout << "2.UCLA, Computer Science" << endl;
+    cout << "1.UC Berkeley, Computer Science" << endl;
+    cout << "2.UC Berkeley, Electrical Engineering and Computer Science" << endl;
+    cout << "3.UC Davis, Computer Engineering" << endl;
+    cout << "4.UC Davis, Computer Science" << endl;
+    cout << "5.UC Davis, Computer Science and Engineering" << endl;
+    cout << "6.UC Irvine, Computer Engineering" << endl;
+    cout << "7.UC Irvine, Computer Game Science" << endl;
+    cout << "8.UC Irvine, Computer Science" << endl;
+    cout << "9.UC Irvine, Computer Science and Engineering" << endl;
+    cout << "10.UC Merced, Computer Science and Engineering" << endl;
+    cout << "11.UC Riverside, Computer Engineering" << endl;
+    cout << "12.UC Riverside, Computer Science" << endl;
+    cout << "13.UC Riverside, Computer Science With Business Application" << endl;
+    cout << "14.UC San Diego, Computer Engineering" << endl;
+    cout << "15.UC San Diego, Computer Science" << endl;
+    cout << "16.UC Santa Barbara, Computer Engineering" << endl;
+    cout << "17.UC Santa Barbara, Computer Science" << endl;
+    cout << "18.UC Santa Cruz, Computer Engineering" << endl;
+    cout << "19.UC Santa Cruz, Computer Science" << endl;
+    cout << "20.UCLA, Computer Science" << endl;
+    cout << "21.UCLA, Computer Science and Engineering" << endl;
 }
 
 void Module::show_school_info(fstream &schoolinfo) { // used when we want to "show" the requirement of the school
     string name_school,program;
     getline(schoolinfo,name_school);
     getline(schoolinfo,program);
-    cout << name_school << ", "<< program << " requires applicants to finish :" << endl;
+    cout << name_school << ", "<< program << ", requires students to finish :" << endl;
     while(!schoolinfo.eof()) {
         string course_number,course_name,credits;
         getline(schoolinfo,course_number);
@@ -385,7 +438,7 @@ void Module::show_school_info(fstream &schoolinfo) { // used when we want to "sh
         }
         getline(schoolinfo,course_name);
         getline(schoolinfo,credits);
-        cout << "COURSE NAME: " << course_number << " " << course_name << "| " << credits << " credits" << endl;
+        cout << "COURSE NAME: " << course_number << " " << course_name << " | " << credits << " credits" << endl;
     }
 }
 

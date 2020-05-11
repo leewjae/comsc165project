@@ -23,11 +23,10 @@ class Module {
         void greeting();
         void show_school_info(fstream &a);
         void show_remained_courses_by_schools(vector<vector<string> >);
+        string open_school_file();
         string new_user();
         vector<vector<string> > school_info_into_vector(fstream &a);
         vector<vector<string> > my_info_into_vector(fstream &a);
-    private:
-        void show_my_coursework_only();
 };
     
 #endif
