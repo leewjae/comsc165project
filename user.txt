@@ -22,20 +22,24 @@ Linear Algebra
 3
 A
 PHYS-130
-Physics Mechanics
+Physics:Mechanics
 4
 A
 PHYS-230
-Physics E&M
+Physics:E&M
 4
 A
 COMSC-110
-Intro C++
+Intro to C++
 4
 A
 COMSC-165
-Advanced C++
+Advanced C++ Programming
 4
+A
+ENGL-122
+Freshman English
+3
 A
 BUS-109
 Intro to Business
@@ -45,11 +49,27 @@ PSYCH-101
 Intro to Psychology
 3
 A
-ENGL-122
-Freshman English
-3
-A
 MATH-140
 Tutor Training
 1
+A
+ENGL-123
+Freshman English2
+3
+A
+COMSC-210
+Program Design and Data Structures
+4
+A
+COMSC-260
+Assembly
+4
+A
+PHYS-231
+physics3
+4
+A
+MATH-195
+Discrete Math
+4
 A

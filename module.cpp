@@ -158,7 +158,7 @@ void Module::show_gpa_and_coursework() {
     std::cout << "You have completed:" << endl;
     int index = 1;
     if (user.eof()) {
-        cout << "You did not add any courses. Do you want to add now? (Please answer with yes or no)\n";
+        cout << "You did not add any courses. Do you want to add now? (Please answer with yes or no)\n---> ";
         string choice;
         getline(cin,choice);
         if (choice == "yes") {
@@ -219,7 +219,7 @@ void Module::edit_courses() {
 
     */
     string response = "";
-    std::cout << "Do you want to add? or delete? (Please answer with add or delete)" << endl;
+    std::cout << "Do you want to add? or delete? (Please answer with add or delete)\n---> ";
     getline(cin,response);
     if ( response == "add" ) {
         Module::add_courses();
@@ -239,19 +239,19 @@ void Module::add_courses() {
     fstream user;
     user.open("user.txt",ios::app);
     string course_number,course_name,credits,letter_grade,reply;
-    std::cout << "What is the course number you want to add? ex) MATH-294\n";
+    std::cout << "What is the course number you want to add? ex) MATH-294\n---> ";
     getline(cin,course_number);
-    std::cout << "What is the name of the course? ex)Differential Equations\n";
+    std::cout << "What is the name of the course? ex)Differential Equations\n---> ";
     getline(cin,course_name);
-    std::cout << "How many credits is your course? ex)5\n";
+    std::cout << "How many credits is your course? ex)5\n---> ";
     getline(cin,credits);
-    std::cout << "What did you got from the course? ex)A\n";
+    std::cout << "What did you got from the course? ex)A\n---> ";
     getline(cin,letter_grade);
 
     std::cout << "You are trying to add " << course_number << " " << course_name << ", "
          << credits << " credits" << " and you got " << letter_grade << "\n";
          // expected output: You are trying to add MATH-294 Differential Equations, 5 credits and you got A"
-    std::cout << "Is it correct? (You may want to answer with yes or no)\n";
+    std::cout << "Is it correct? (You may want to answer with yes or no)\n---> ";
     getline(cin,reply);
     if (reply == "yes") {
         user << "\n" << course_number << "\n" ;
@@ -268,7 +268,7 @@ void Module::add_courses() {
         }
 
     } else if (reply == "no") {
-        std::cout << "Okay, do you want to re-enter your data? \n";
+        std::cout << "Okay, do you want to re-enter your data? \n---> ";
         string reply;
         getline(cin,reply);
         if (reply == "yes") {
@@ -313,7 +313,7 @@ void Module::delete_courses() {
     }
     string course_to_delete ="";
     int index_course_to_delete = 0;
-    cout << "Which course do you want to delete? (Please enter a number)\n";
+    cout << "Which course do you want to delete? (Please enter a number)\n---> ";
     getline(cin,course_to_delete);
     index_course_to_delete = atoi(course_to_delete.c_str()) - 1 ;// because index starts from 1 
     if (index_course_to_delete == -1) {
@@ -321,7 +321,7 @@ void Module::delete_courses() {
         // press_any_key_to_continue();
     } else {
         string reply;
-        cout << "You chose " << vec_course_number.at(index_course_to_delete) << " to be deleted. Is this correct?";
+        cout << "You chose " << vec_course_number.at(index_course_to_delete) << " to be deleted. Is this correct?\n---> ";
         getline(cin,reply);
         cout << reply;
             if (reply == "yes") {
@@ -385,17 +385,23 @@ void Module::show_remained_courses_by_schools(vector<vector<string> > schoolinfo
                 }
             }
         }
-        cout << "You should complete those courses to apply the school\n";
-        cout << "-------------------------------------------------------------"  << endl;
-        for ( int i = 0 ; i < not_completed_courses.at(0).size() ; ++i ) {
-            for ( int j = 0 ; j < not_completed_courses.size(); ++j) {
-                if ( j != 2) {
-                    cout << not_completed_courses.at(j).at(i) << "\n";
-                } else {
-                    cout << not_completed_courses.at(j).at(i) << " credits" << endl;
+        if (not_completed_courses.at(0).empty()) {
+            cout << "You have finished all courses to transfer to this school!\n";
+            cout << "Good luck with your application!\n";
+
+        } else {
+            cout << "You should complete those courses to apply this school\n";
+            cout << "-------------------------------------------------------------"  << endl;
+            for ( int i = 0 ; i < not_completed_courses.at(0).size() ; ++i ) {
+                for ( int j = 0 ; j < not_completed_courses.size(); ++j) {
+                    if ( j != 2) {
+                        cout << not_completed_courses.at(j).at(i) << "\n";
+                    } else {
+                        cout << not_completed_courses.at(j).at(i) << " credits" << endl;
+                    }
                 }
+                cout << "-------------------------------------------------------------" << endl;
             }
-            cout << "-------------------------------------------------------------" << endl;
         }
         press_any_key_to_continue();
 }
