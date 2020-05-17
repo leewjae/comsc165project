@@ -96,47 +96,47 @@ string Module::open_school_file() {
         cout << "Invalid choice! \n";
         open_school_file();
     } else if (choice == 1) {
-        return ("./data/berkeley_cs.txt"); // loading berkeley_cs
+        return ("./berkeley_cs.txt"); // loading berkeley_cs
     } else if (choice == 2) {
-        return ("./data/berkeley_eecs.txt"); // loading ucla_cs
+        return ("./berkeley_eecs.txt"); // loading ucla_cs
     } else if (choice == 3) {
-        return ("./data/davis_ce.txt");
+        return ("./davis_ce.txt");
     } else if (choice == 4) {
-        return ("./data/davis_cs.txt");
+        return ("./davis_cs.txt");
     } else if (choice == 5) {
-        return ("./data/davis_csae.txt");
+        return ("./davis_csae.txt");
     } else if (choice == 6) {
-        return ("./data/irvine_ce.txt");
+        return ("./irvine_ce.txt");
     } else if (choice == 7) {
-        return ("./data/irvine_cgs.txt");
+        return ("./irvine_cgs.txt");
     } else if (choice == 8) {
-        return ("./data/irvine_cs.txt");
+        return ("./irvine_cs.txt");
     } else if (choice == 9) {
-        return ("./data/irvine_csae.txt");
+        return ("./irvine_csae.txt");
     } else if (choice == 10) {
-        return ("./data/merced_csae.txt");
+        return ("./merced_csae.txt");
     } else if (choice == 11) {
-        return ("./data/riverside_ce.txt");
+        return ("./riverside_ce.txt");
     } else if (choice == 12) {
-        return ("./data/riverside_cs.txt");
+        return ("./riverside_cs.txt");
     } else if (choice == 13) {
-        return ("./data/riverside_cswba.txt");
+        return ("./riverside_cswba.txt");
     } else if (choice == 14) {
-        return ("./data/sandiego_ce.txt");
+        return ("./sandiego_ce.txt");
     } else if (choice == 15) {
-        return ("./data/sandiego_cs.txt");
+        return ("./sandiego_cs.txt");
     } else if (choice == 16) {
-        return ("./data/santabarbara_ce.txt");
+        return ("./santabarbara_ce.txt");
     } else if (choice == 17) {
-        return ("./data/santabarbara_cs.txt");
+        return ("./santabarbara_cs.txt");
     } else if (choice == 18) {
-        return ("./data/santacruz_ce.txt");
+        return ("./santacruz_ce.txt");
     } else if (choice == 19) {
-        return ("./data/santacruz_cs.txt");
+        return ("./santacruz_cs.txt");
     } else if (choice == 20) {
-        return ("./data/ucla_cs.txt");
+        return ("./ucla_cs.txt");
     } else if (choice == 21) {
-        return ("./data/ucla_csae.txt");
+        return ("./ucla_csae.txt");
     }  
 }
 
